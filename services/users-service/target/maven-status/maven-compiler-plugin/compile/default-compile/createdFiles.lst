@@ -1,0 +1,5 @@
+com\protogen\users\service\Application.class
+com\protogen\users\service\UserServiceImpl.class
+com\protogen\users\service\User.class
+com\protogen\users\service\UserService.class
+com\protogen\users\service\Constant.class
