@@ -11,26 +11,18 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <exec.mainClass>com.mycompany.car.service.CarService</exec.mainClass>
     </properties>
-    
+
      <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.3.2.RELEASE</version>
+  <version>3.3.4</version>
 </parent>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <scope>runtime</scope>
-</dependency>
+
     <dependencies>
     <!-- Spring Boot Starter Web -->
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
+       <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
     <!-- Optional: Spring Boot Starter Data JPA if using databases -->
@@ -44,6 +36,22 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
+  <dependency>
+  <groupId>org.mapstruct</groupId>
+  <artifactId>mapstruct</artifactId>
+  <version>1.4.2.Final</version>
+</dependency>
+<dependency>
+  <groupId>org.mapstruct</groupId>
+  <artifactId>mapstruct-processor</artifactId>
+  <version>1.4.2.Final</version>
+  <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>runtime</scope>
+</dependency>
 </dependencies>
 
 <build>

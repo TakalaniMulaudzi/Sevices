@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.protogen</groupId>
+    <groupId>co.protogen</groupId>
     <artifactId>reservations-service</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -9,22 +9,32 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <exec.mainClass>com.protogen.reservations.service.ReservationsService</exec.mainClass>
+        <exec.mainClass>za.co.protogen.reservations.service.Application</exec.mainClass>
     </properties>
     
      <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.3.2.RELEASE</version>
+  <version>3.3.4</version>
 </parent>
 
     <dependencies>
     <!-- Spring Boot Starter Web -->
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
+       <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
+<dependency>
+  <groupId>org.mapstruct</groupId>
+  <artifactId>mapstruct</artifactId>
+  <version>1.4.2.Final</version>
+</dependency>
+<dependency>
+  <groupId>org.mapstruct</groupId>
+  <artifactId>mapstruct-processor</artifactId>
+  <version>1.4.2.Final</version>
+  <scope>provided</scope>
+</dependency>
     <!-- Optional: Spring Boot Starter Data JPA if using databases -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -36,16 +46,14 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
-</dependencies>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
+  
 <dependency>
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
     <scope>runtime</scope>
 </dependency>
+</dependencies>
+
 <build>
     <plugins>
         <plugin>

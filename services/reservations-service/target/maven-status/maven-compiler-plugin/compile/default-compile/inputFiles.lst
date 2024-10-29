@@ -1,5 +1,7 @@
-C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\com\protogen\reservations\service\Constant.java
-C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\com\protogen\reservations\service\Reservation.java
-C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\com\protogen\reservations\service\ReservationService.java
-C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\com\protogen\reservations\service\ReservationServiceImpl.java
-C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\com\protogen\reservations\service\Application.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\za\co\protogen\utility\Constant.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\za\co\protogen\ReservationController.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\za\co\protogen\Application.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\za\co\protogen\domain\Reservation.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\ReservationServiceApplication.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\za\co\protogen\core\ReservationService.java
+C:\Users\Dell\Documents\NetBeansProjects\services\reservations-service\src\main\java\za\co\protogen\core\impl\ReservationServiceImpl.java
