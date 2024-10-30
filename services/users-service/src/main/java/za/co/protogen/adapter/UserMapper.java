@@ -13,6 +13,7 @@ import org.mapstruct.Mapping;
 import za.co.protogen.persistence.models.UserDTO;
 import za.co.protogen.persistence.models.UserDomain;
 import za.co.protogen.persistence.models.UserEntity;
+import za.co.protogen.persistence.repository.User;
 
 
 @Mapper(componentModel = "spring")
@@ -24,5 +25,5 @@ public interface UserMapper {
 
     // Map between Domain and Entity
     UserEntity domainToEntity(UserDomain domain);
-    UserDomain entityToDomain(UserEntity entity);
+    UserDomain entityToDomain(User entity);
 }
