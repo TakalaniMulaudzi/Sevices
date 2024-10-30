@@ -4,10 +4,17 @@
  */
 package za.co.protogen.core.impl;
 
+import java.util.List;
+import za.co.protogen.persistence.models.UserDomain;
+
 /**
  *
  * @author Dell
  */
-interface UserService {
-    
+public interface UserService {
+   UserDomain createUser(UserDomain user);
+    UserDomain getUserById(Long id);
+    List<UserDomain> getAllUsers();
+    UserDomain updateUser(Long id, UserDomain user);
+    void deleteUser(Long id);  
 }

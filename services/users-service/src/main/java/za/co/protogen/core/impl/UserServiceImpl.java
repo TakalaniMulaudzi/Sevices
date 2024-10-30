@@ -1,52 +1,61 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package za.co.protogen.core.impl;
 
-/**
- *
- * @author Dell
- */
-
-import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.co.protogen.domain.User;
+import za.co.protogen.adapter.UserMapper;
+import za.co.protogen.persistence.models.UserEntity;
 import za.co.protogen.persistence.repository.UserRepository;
 
+
+import java.util.List;
+import java.util.stream.Collectors;
+import za.co.protogen.persistence.models.UserDomain;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
-    public User addUser(User user) {
-        return userRepository.save(user);
+    @Override
+    public UserDomain createUser(UserDomain user) {
+        UserEntity userEntity = userMapper.domainToEntity(user);
+    
+        return userMapper.entityToDomain(userEntity);
     }
 
-    public User getUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
+    @Override
+    public UserDomain getUserById(Long id) {
+        return userRepository.findById(id)
+                .map(userMapper::entityToDomain)
+                .orElse(null);
     }
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    @Override
+    public List<UserDomain> getAllUsers() {
+        return userRepository.findAll()
+                .stream()
+                .map(userMapper::entityToDomain)
+                .collect(Collectors.toList());
     }
 
-    public User updateUser(Long id, User user) {
+    @Override
+    public UserDomain updateUser(Long id, UserDomain user) {
         if (userRepository.existsById(id)) {
             user.setId(id);
-            return userRepository.save(user);
+            UserEntity updatedEntity = userRepository.save(userMapper.domainToEntity(user));
+            return userMapper.entityToDomain(updatedEntity);
         }
         return null;
     }
 
+    @Override
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
